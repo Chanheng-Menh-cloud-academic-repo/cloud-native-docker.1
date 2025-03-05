@@ -1,11 +1,11 @@
-# Use official Nginx image
+# Use the official nginx image as the base image
 FROM nginx:latest
 
-# Copy website files from the Moderna directory to the Nginx default directory
-COPY Moderna/ /usr/share/nginx/html
+# Copy the static website files into the default nginx directory
+COPY ./NiceAdmin /usr/share/nginx/html
 
-# Expose port 80
+# Expose port 80 for HTTP traffic
 EXPOSE 80
 
-# Start NGINX server
+# Start nginx server
 CMD ["nginx", "-g", "daemon off;"]
